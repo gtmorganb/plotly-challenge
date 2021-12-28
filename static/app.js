@@ -1,13 +1,8 @@
-// select user input field 
+d3.json('data/samples.json').then(data => console.log(data))
+
 var idDrop = d3.select("#selDataset"); 
-
-//select demogtaphic info 
 var demoTable = d3.select("#sample-metadata"); 
-
-//select bar chart 
 var barChart = d3.select("#bar"); 
-
-//select bubble chart 
 var bubChart = d3.select("bubble"); 
 
 //create function for dropdown menu 
@@ -16,7 +11,6 @@ function init() {
 
     //read in json 
     d3.json("data/samples.json").then((data => {
-        //populate dropdown with ids 
         data.names.forEach((name => {
             var option = idDrop.append("option"); 
             option.text(name);
